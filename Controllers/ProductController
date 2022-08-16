@@ -1,0 +1,21 @@
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+
+namespace firstkaniniapi.Controllers
+
+ [Route("api/[controller]")]
+[ApiController]
+public class ProductController : ControllerBase
+{
+    public static List<string> prds=new List<string>();
+
+   [HttpGet]
+   [Route("getproducts")]
+   public  IEnumerable<string> getAllProducts()
+   {
+   prds.Add("Pen")    ;
+   prds.Add("Pencil");
+   return prds;
+    
+   }
+}
